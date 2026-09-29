@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maya Mahmoud — Full-Stack Web Developer</title>
+  <meta name="description" content="Maya Mahmoud — Full-Stack Web Developer (Laravel, Angular, MySQL). Multi-tenant SaaS, role-based access control, auditability and live production deployments." />
+  <meta name="theme-color" content="#06060c" />
+
+  <!-- Social preview (LinkedIn / WhatsApp) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Maya Mahmoud — Full-Stack Web Developer" />
+  <meta property="og:description" content="Laravel · Angular · MySQL — from requirements to a live, tested, multi-tenant system." />
+  <meta property="og:image" content="assets/img/og-cover.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23a78bfa'/%3E%3Cstop offset='1' stop-color='%2322d3ee'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='%2306060c'/%3E%3Cpath d='M14 46V18l10 16 8-12 8 12 10-16v28' fill='none' stroke='url(%23g)' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <svg class="preloader__logo" viewBox="0 0 64 64">
+      <defs>
+        <linearGradient id="pl-g" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#a78bfa" /><stop offset="1" stop-color="#22d3ee" />
+        </linearGradient>
+      </defs>
+      <path d="M14 46V18l10 16 8-12 8 12 10-16v28" fill="none" stroke="url(#pl-g)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+    <div class="preloader__bar"><span></span></div>
+  </div>
+
+  <!-- Ambient background -->
+  <div class="bg" aria-hidden="true">
+    <div class="bg__blob bg__blob--1"></div>
+    <div class="bg__blob bg__blob--2"></div>
+    <div class="bg__blob bg__blob--3"></div>
+    <div class="bg__grid"></div>
+    <canvas id="network"></canvas>
+    <div class="bg__noise"></div>
+  </div>
+
+  <!-- Custom cursor -->
+  <div class="cursor" aria-hidden="true"><div class="cursor__dot"></div><div class="cursor__ring"></div></div>
+
+  <!-- Scroll progress -->
+  <div class="progress" aria-hidden="true"><span id="progress"></span></div>
+
+  <!-- Navigation -->
+  <header class="nav" id="nav">
+    <a href="#top" class="nav__logo" aria-label="Maya Mahmoud">
+      <svg viewBox="0 0 64 64"><defs><linearGradient id="nav-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a78bfa" /><stop offset="1" stop-color="#22d3ee" /></linearGradient></defs><path d="M14 46V18l10 16 8-12 8 12 10-16v28" fill="none" stroke="url(#nav-g)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" /></svg>
+    </a>
+    <nav class="nav__links" id="navLinks">
+      <a href="#about" data-i18n="nav.about">About</a>
+      <a href="#process" data-i18n="nav.process">Process</a>
+      <a href="#skills" data-i18n="nav.skills">Skills</a>
+      <a href="#work" data-i18n="nav.work">Work</a>
+      <a href="#journey" data-i18n="nav.journey">Journey</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="nav__actions">
+      <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">
+        <span class="lang-toggle__opt" data-lang="en">EN</span>
+        <span class="lang-toggle__opt" data-lang="ar">ع</span>
+        <span class="lang-toggle__thumb"></span>
+      </button>
+      <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <div class="pill reveal"><span class="pill__dot"></span><span data-i18n="hero.badge">Open to new opportunities</span></div>
+          <p class="hero__greet reveal" data-i18n="hero.greet">Hi, I'm</p>
+          <h1 class="hero__name reveal" data-i18n="hero.name">Maya Mahmoud</h1>
+          <p class="hero__role reveal"><span class="typed" id="typed"></span><span class="caret"></span></p>
+          <p class="hero__desc reveal" data-i18n="hero.desc"></p>
+          <div class="hero__cta reveal">
+            <a href="#work" class="btn btn--primary magnetic"><span data-i18n="hero.cta1">View my work</span>
+              <svg class="flip-rtl" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a href="assets/Maya_Mahmoud_CV.pdf?v=3" target="_blank" rel="noopener" class="btn btn--ghost magnetic"><span data-i18n="hero.cta2">View CV</span>
+              <svg viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></a>
+          </div>
+          <div class="hero__social reveal">
+            <a href="https://linkedin.com/in/maya-mahmoud-65255832b" target="_blank" rel="noopener" aria-label="LinkedIn" class="icon-btn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg></a>
+            <a href="https://github.com/Maya-Mahmoud" target="_blank" rel="noopener" aria-label="GitHub" class="icon-btn"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+            <a href="https://wa.me/963980143058" target="_blank" rel="noopener" aria-label="WhatsApp" class="icon-btn js-wa"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.5 8.5 0 1 1 21 11.5z"/><path d="M8.6 8.4c.3-.5.8-.5 1.1-.5l.8 1.7c.1.2 0 .5-.1.6l-.6.7c.6 1.2 1.6 2.2 2.8 2.8l.7-.6c.2-.1.4-.2.6-.1l1.7.8c0 .3 0 .8-.5 1.1-.5.3-1.4.5-2.6-.1a8 8 0 0 1-3.8-3.8c-.6-1.2-.4-2.1-.1-2.6z"/></svg></a>
+            <a href="mailto:mahmoudmaya689@gmail.com" aria-label="Email" class="icon-btn js-mail"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m22 7-10 6L2 7"/></svg></a>
+          </div>
+        </div>
+
+        <div class="hero__visual reveal" dir="ltr">
+          <div class="code-window tilt">
+            <div class="code-window__bar"><i></i><i></i><i></i><span>LedgerService.php</span></div>
+            <pre class="code"><code><span class="ln"><span class="c">// Balance is derived — never stored.</span></span>
+<span class="ln"><span class="k">public function</span> <span class="f">balance</span>(<span class="t">Customer</span> <span class="v">$c</span>): <span class="t">int</span></span>
+<span class="ln">{</span>
+<span class="ln">    <span class="k">return</span> <span class="v">$c</span>-&gt;<span class="f">ledger</span>()</span>
+<span class="ln">        -&gt;<span class="f">where</span>(<span class="s">'tenant_id'</span>, <span class="f">tenant</span>()-&gt;id)</span>
+<span class="ln">        -&gt;<span class="f">where</span>(<span class="s">'status'</span>, <span class="t">Entry</span>::<span class="v">APPROVED</span>)</span>
+<span class="ln">        -&gt;<span class="f">sum</span>(<span class="s">'points'</span>);</span>
+<span class="ln">}<span class="code-caret"></span></span></code></pre>
+            <div class="code-window__foot"><span class="ok">✓</span> Feature tests passing <em>· tenant isolation · ledger · RBAC</em></div>
+          </div>
+          <div class="float-chip float-chip--1"><b style="--c:#ff2d20"></b>Laravel 12</div>
+          <div class="float-chip float-chip--2"><b style="--c:#dd0031"></b>Angular 17</div>
+          <div class="float-chip float-chip--3"><b style="--c:#22d3ee"></b>MySQL</div>
+          <div class="float-chip float-chip--4"><b style="--c:#a78bfa"></b>Multi-Tenant</div>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-hint" aria-label="Scroll"><span></span></a>
+    </section>
+
+    <!-- Marquee -->
+    <div class="marquee" dir="ltr" aria-hidden="true">
+      <div class="marquee__track" id="marquee"></div>
+    </div>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow" data-i18n="about.eyebrow">About me</span>
+          <h2 class="title" data-i18n="about.title"></h2>
+        </div>
+        <div class="about">
+          <div class="about__photo reveal">
+            <div class="photo-frame tilt">
+              <img src="assets/img/profile.jpg" alt="Maya Mahmoud" onerror="this.remove()" />
+              <div class="photo-frame__mono">MM</div>
+              <div class="photo-frame__ring"></div>
+            </div>
+            <div class="about__loc"><svg viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><span data-i18n="about.loc">Tartous, Syria</span></div>
+          </div>
+          <div class="about__body">
+            <p class="about__lead reveal" data-i18n="about.p1"></p>
+            <p class="reveal" data-i18n="about.p2"></p>
+            <div class="about__facts reveal">
+              <div class="fact"><span class="fact__k" data-i18n="about.eduK">Education</span><span class="fact__v" data-i18n="about.eduV"></span></div>
+              <div class="fact"><span class="fact__k" data-i18n="about.langK">Languages</span><span class="fact__v" data-i18n="about.langV"></span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stats">
+          <div class="stat reveal tilt"><span class="stat__num" data-count="3">0</span><span class="stat__label" data-i18n="stats.s1"></span></div>
+          <div class="stat reveal tilt"><span class="stat__num" data-count="2">0</span><span class="stat__label" data-i18n="stats.s2"></span></div>
+          <div class="stat reveal tilt"><span class="stat__num" data-count="12">0</span><span class="stat__label" data-i18n="stats.s3"></span></div>
+          <div class="stat reveal tilt"><span class="stat__num" data-count="100" data-suffix="%">0</span><span class="stat__label" data-i18n="stats.s4"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="section" id="process">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow" data-i18n="process.eyebrow">How I work</span>
+          <h2 class="title" data-i18n="process.title"></h2>
+          <p class="subtitle" data-i18n="process.sub"></p>
+        </div>
+        <div class="process" id="processList">
+          <div class="process__line"><span id="processLine"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow" data-i18n="skills.eyebrow">Toolkit</span>
+          <h2 class="title" data-i18n="skills.title"></h2>
+        </div>
+        <div class="skills" id="skillsGrid"></div>
+      </div>
+    </section>
+
+    <!-- WORK -->
+    <section class="section" id="work">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow" data-i18n="work.eyebrow">Selected work</span>
+          <h2 class="title" data-i18n="work.title"></h2>
+          <p class="subtitle" data-i18n="work.sub"></p>
+        </div>
+        <div class="projects" id="projectsList"></div>
+      </div>
+    </section>
+
+    <!-- JOURNEY -->
+    <section class="section" id="journey">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow" data-i18n="journey.eyebrow">Journey</span>
+          <h2 class="title" data-i18n="journey.title"></h2>
+        </div>
+        <ol class="timeline" id="timeline"></ol>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact" id="contact">
+      <div class="container">
+        <div class="contact__card reveal">
+          <div class="contact__glow"></div>
+          <span class="eyebrow" data-i18n="contact.eyebrow">Contact</span>
+          <h2 class="contact__title" data-i18n="contact.title"></h2>
+          <p class="subtitle" data-i18n="contact.sub"></p>
+          <div class="contact__email-row">
+            <a class="contact__email magnetic js-mail" href="mailto:mahmoudmaya689@gmail.com" dir="ltr"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m22 7-10 6L2 7"/></svg><span>mahmoudmaya689@gmail.com</span></a>
+          </div>
+          <div class="contact__grid">
+            <a class="contact__item tilt js-wa" href="https://wa.me/963980143058" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.5 8.5 0 1 1 21 11.5z"/><path d="M8.6 8.4c.3-.5.8-.5 1.1-.5l.8 1.7c.1.2 0 .5-.1.6l-.6.7c.6 1.2 1.6 2.2 2.8 2.8l.7-.6c.2-.1.4-.2.6-.1l1.7.8c0 .3 0 .8-.5 1.1-.5.3-1.4.5-2.6-.1a8 8 0 0 1-3.8-3.8c-.6-1.2-.4-2.1-.1-2.6z"/></svg>
+              <span><b>WhatsApp</b><em dir="ltr">+963 980 143 058</em></span>
+            </a>
+            <a class="contact__item tilt" href="https://linkedin.com/in/maya-mahmoud-65255832b" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg>
+              <span><b>LinkedIn</b><em>maya-mahmoud</em></span>
+            </a>
+            <a class="contact__item tilt" href="https://github.com/Maya-Mahmoud" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              <span><b>GitHub</b><em>Maya-Mahmoud</em></span>
+            </a>
+            <a class="contact__item tilt" href="assets/Maya_Mahmoud_CV.pdf?v=3" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>
+              <span><b data-i18n="contact.cv">Résumé</b><em>PDF</em></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>© <span id="year"></span> Maya Mahmoud</span>
+      <span data-i18n="footer.made">Designed &amp; built with care.</span>
+      <a href="#top" class="footer__top" data-i18n="footer.top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <!-- Video modal -->
+  <dialog class="modal" id="videoModal">
+    <div class="modal__inner">
+      <button class="modal__close" id="modalClose" type="button" aria-label="Close">
+        <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+      <h3 class="modal__title" id="modalTitle"></h3>
+      <video id="modalVideo" controls playsinline></video>
+    </div>
+  </dialog>
+
+  <!-- Case study modal -->
+  <dialog class="case" id="caseModal">
+    <button class="modal__close case__close" id="caseClose" type="button" aria-label="Close">
+      <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+    <div class="case__body" id="caseBody"></div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
